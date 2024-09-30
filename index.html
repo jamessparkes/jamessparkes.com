@@ -604,7 +604,7 @@
                     if (window.innerWidth >= 640) { // sm breakpoint
                         cvModalContent.classList.remove('opacity-0');
                         cvModalContent.classList.add('opacity-100');
-                        cvModalContent.style.transform = 'translate(-50%, -55%)';
+                        cvModalContent.style.transform = 'translate(-50%, -50%) scale(1)';
                     } else {
                         cvModalContent.classList.remove('translate-y-full');
                     }
@@ -616,7 +616,7 @@
                 if (window.innerWidth >= 640) { // sm breakpoint
                     cvModalContent.classList.remove('opacity-100');
                     cvModalContent.classList.add('opacity-0');
-                    cvModalContent.style.transform = 'translate(-50%, -45%)';
+                    cvModalContent.style.transform = 'translate(-50%, -50%) scale(0.95)';
                 } else {
                     cvModalContent.classList.add('translate-y-full');
                 }
@@ -624,7 +624,7 @@
                     cvModal.classList.add('hidden');
                     // Reset transform for next opening
                     if (window.innerWidth >= 640) {
-                        cvModalContent.style.transform = 'translate(-50%, -50%)';
+                        cvModalContent.style.transform = 'translate(-50%, -50%) scale(1)';
                     }
                 }, 300);
             }
