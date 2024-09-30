@@ -153,7 +153,7 @@
             position: absolute;
             left: 0;
             right: 0;
-            bottom: -4px; /* Adjust this value to move the line further down */
+            bottom: -3px; /* Adjust this value to move the line further down */
             height: 1px; /* 1px high line */
             background-color: currentColor;
             opacity: 0.3; /* 50% opacity */
@@ -216,24 +216,22 @@
                 <a href="#" id="whatsappLink" target="_blank" rel="noopener noreferrer" class="text-gray-700 dark:text-white underline hover:text-gray-900 dark:hover:text-gray-200 transition duration-300 cursor-pointer">
                     Contact
                 </a>
-                <!-- CV -->
-                <a href="#" id="cvLink" class="text-gray-700 dark:text-white underline hover:text-gray-900 dark:hover:text-gray-200 transition duration-300 cursor-pointer">
-                    CV
+                <!-- View CV -->
+                <a href="#" id="cvLink" class="sm:hidden text-gray-700 dark:text-white underline hover:text-gray-900 dark:hover:text-gray-200 transition duration-300 cursor-pointer">
+                    View CV
+                </a>
+                <!-- Download CV -->
+                <a href="https://jamessparkes.s3.eu-west-1.amazonaws.com/James_Sparkes_CV.pdf" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-block text-gray-700 dark:text-white underline hover:text-gray-900 dark:hover:text-gray-200 transition duration-300 cursor-pointer">
+                    Download CV
                 </a>
             </div>
 
             <!-- CV Modal -->
             <div id="cvModal" class="fixed inset-0 z-[1001] hidden">
                 <div id="cvModalBackground" class="absolute inset-0 bg-black bg-opacity-20 opacity-0 transition-opacity duration-300"></div>
-                <div id="cvModalContent" class="absolute inset-x-0 bottom-0 sm:inset-auto sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 bg-primary-light dark:bg-primary-dark rounded-t-2xl sm:rounded-2xl transform translate-y-full sm:translate-y-0 transition-all duration-300 h-[80vh] sm:h-auto sm:max-h-[80vh] sm:w-[600px] flex flex-col sm:opacity-0">
-                    <!-- Close button for desktop -->
-                    <button id="closeModalButtonDesktop" class="hidden sm:block absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
+                <div id="cvModalContent" class="absolute inset-x-0 bottom-0 bg-primary-light dark:bg-primary-dark rounded-t-xl transform translate-y-full transition-all duration-300 h-[80vh] flex flex-col">
                     <!-- Puller (only for mobile) -->
-                    <div class="flex justify-center pt-2 pb-4 sm:hidden">
+                    <div class="flex justify-center pt-2 pb-4">
                         <div class="w-10 h-1 bg-gray-400 dark:bg-gray-500 rounded-full"></div>
                     </div>
                     <!-- CV content -->
@@ -387,32 +385,17 @@
                             </div>
                         </div>
 
-                        <!-- Download CV and Close buttons -->
-                        <div class="mt-8 space-y-4 p-4 sm:p-6">
-                            <a href="https://jamessparkes.s3.eu-west-1.amazonaws.com/James_Sparkes_CV.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full px-4 py-4 bg-black dark:bg-white text-white dark:text-black rounded-global hover:bg-gray-800 dark:hover:bg-gray-200 transition duration-300 relative group font-medium hover:font-semibold">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                                </svg>
+                        <!-- Download CV and Close links -->
+                        <div class="mt-8 pb-8 flex flex-col items-center gap-8">
+                            <a href="https://jamessparkes.s3.eu-west-1.amazonaws.com/James_Sparkes_CV.pdf" target="_blank" rel="noopener noreferrer" class="inline-block text-gray-700 dark:text-white underline hover:text-gray-900 dark:hover:text-gray-200 transition duration-300 cursor-pointer">
                                 Download CV
-                                <span class="absolute -inset-[5px] rounded-global border border-black dark:border-white opacity-0 group-hover:opacity-100 transition-all duration-300"></span>
                             </a>
-                            <button id="closeModalButton" class="sm:hidden inline-flex items-center justify-center w-full px-4 py-4 bg-transparent text-black dark:text-white border border-black dark:border-white rounded-global hover:bg-gray-100 dark:hover:bg-gray-800 transition duration-300 relative group font-medium hover:font-semibold">
+                            <a href="#" id="closeModalButton" class="sm:hidden inline-block text-gray-700 dark:text-white underline hover:text-gray-900 dark:hover:text-gray-200 transition duration-300 cursor-pointer">
                                 Close
-                                <span class="absolute -inset-[5px] rounded-global border border-black dark:border-white opacity-0 group-hover:opacity-100 transition-all duration-300"></span>
-                            </button>
+                            </a>
                         </div>
                     </div> <!-- Close of #cvContent -->
                 </div>
-            </div>
-            <!-- Download CV button -->
-            <div class="mt-8 hidden sm:block">
-                <a href="https://jamessparkes.s3.eu-west-1.amazonaws.com/James_Sparkes_CV.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 bg-black dark:bg-white text-white dark:text-black rounded-global hover:bg-gray-800 dark:hover:bg-gray-200 transition duration-300 relative group font-medium hover:font-semibold">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                    </svg>
-                    Download CV
-                    <span class="absolute -inset-[5px] rounded-global border border-black dark:border-white opacity-0 group-hover:opacity-100 transition-all duration-300"></span>
-                </a>
             </div>
         </div>
 
@@ -595,37 +578,20 @@
             const cvModalBackground = document.getElementById('cvModalBackground');
             const cvModalContent = document.getElementById('cvModalContent');
             const closeModalButton = document.getElementById('closeModalButton');
-            const closeModalButtonDesktop = document.getElementById('closeModalButtonDesktop');
 
             function openModal() {
                 cvModal.classList.remove('hidden');
                 setTimeout(() => {
                     cvModalBackground.classList.add('opacity-100');
-                    if (window.innerWidth >= 640) { // sm breakpoint
-                        cvModalContent.classList.remove('opacity-0');
-                        cvModalContent.classList.add('opacity-100');
-                        cvModalContent.style.transform = 'translate(-50%, -50%) scale(1)';
-                    } else {
-                        cvModalContent.classList.remove('translate-y-full');
-                    }
+                    cvModalContent.classList.remove('translate-y-full');
                 }, 10);
             }
 
             function closeModal() {
                 cvModalBackground.classList.remove('opacity-100');
-                if (window.innerWidth >= 640) { // sm breakpoint
-                    cvModalContent.classList.remove('opacity-100');
-                    cvModalContent.classList.add('opacity-0');
-                    cvModalContent.style.transform = 'translate(-50%, -50%) scale(0.95)';
-                } else {
-                    cvModalContent.classList.add('translate-y-full');
-                }
+                cvModalContent.classList.add('translate-y-full');
                 setTimeout(() => {
                     cvModal.classList.add('hidden');
-                    // Reset transform for next opening
-                    if (window.innerWidth >= 640) {
-                        cvModalContent.style.transform = 'translate(-50%, -50%) scale(1)';
-                    }
                 }, 300);
             }
 
@@ -635,7 +601,6 @@
             });
 
             closeModalButton.addEventListener('click', closeModal);
-            closeModalButtonDesktop.addEventListener('click', closeModal);
 
             cvModalBackground.addEventListener('click', closeModal);
 
